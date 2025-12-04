@@ -47,20 +47,13 @@ app.use(
     })(req, res, next);
   });
 
-const MONGO_URI = 'mongodb+srv://2023ucp1843_db_user:4soOnQxxQyh5UStt@complaintregistrationsy.nliqixx.mongodb.net';
-const MONGO_OPTIONS = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
+const MONGO_URI = 'mongodb+srv://2023ucp1843_db_user:cAo2gBdVLueN9NbD@complaintregistrationsy.nliqixx.mongodb.net/?appName=complaintregistrationsy';
+
 
 async function Start_Server() {
   try {
     //console.log(MONGO_URI)
-    await mongoose
-      .connect(
-        MONGO_URI,
-        MONGO_OPTIONS
-      )
+    await mongoose.connect(MONGO_URI);
     app.listen(PORT, () => {
       console.log(`Server is listening on port: ${PORT}`);
     });
