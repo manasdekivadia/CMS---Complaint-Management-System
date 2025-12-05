@@ -237,10 +237,11 @@ const MyComplaints = () => {
         <Container maxWidth = "lg" style = {{ marginTop: "40px" }}>
       <Grid container spacing={3}>
         {complaintsData.map((complaint) => (
-          <Grid item key={complaint.id} xs={12} sm={6} md={4}>
-            <ComplaintCard complaint={complaint} viewHandler={viewHandler} />
-          </Grid>
-        ))}
+  <Grid item key={complaint._id} xs={12} sm={6} md={4}>
+    <ComplaintCard complaint={complaint} viewHandler={() => viewHandler(complaint._id)} />
+  </Grid>
+))}
+
       </Grid>
         
     </Container>
